@@ -19,6 +19,8 @@ function displayWeather(response) {
               src="${response.data.condition.icon_url}"
               class="current-temperature-icon"
             />`;
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -58,7 +60,15 @@ function searchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "450t1c96cdofe31eba88df33fa045a30";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
   let forecastHtml = "";
 
@@ -86,4 +96,3 @@ function displayForecast() {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", searchSubmit);
 searchCity("Harare");
-displayForecast();
