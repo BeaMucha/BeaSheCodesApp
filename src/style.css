@@ -3,7 +3,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 .weather-app {
-  background: #214e8e;
+  background: linear-gradient(-225deg, #5d9fff 0%, #b8dcff 48%, #6bbbff 100%);
   max-width: 600px;
   margin: 60px auto;
   padding: 30px;
@@ -100,16 +100,19 @@ main {
 
 .weather-forecast-date {
   text-align: center;
-
+  color: #ffffff;
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 10px;
 }
 
 .weather-forecast-icon {
-  font-size: 38px;
-  text-align: center;
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: 0 auto;
 }
+
 .weather-forecast-temperatures {
   text-align: center;
   color: #f9f7fe;
